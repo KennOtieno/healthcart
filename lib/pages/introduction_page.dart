@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:healthcart/pages/home_page.dart';
 
 class IntroductionPage extends StatelessWidget {
   const IntroductionPage({super.key});
@@ -11,6 +12,7 @@ class IntroductionPage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               // Logo
               Padding(
@@ -44,19 +46,30 @@ class IntroductionPage extends StatelessWidget {
               const SizedBox(height: 22),
           
               // Button for user to enter the app
-              Container(
-                decoration: const BoxDecoration(
-                  color: Colors.black,
-                ),
-                padding: const EdgeInsets.all(25),
-                child: const Center(
-                  child: Text(
-                    'Get Started',
-                    style: TextStyle(
-                      color: Colors.white,
-                    )
+              GestureDetector(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => HomePage(),
                   ),
-                )
+                  ),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  padding: const EdgeInsets.all(25),
+                  child: const Center(
+                    child: Text(
+                      'Get Started',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      )
+                    ),
+                  )
+                ),
               )
             ],
           ),

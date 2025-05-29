@@ -8,6 +8,13 @@ class BottomNavigation extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: GNav(
+        padding: EdgeInsets.symmetric(vertical: 20,),
+        color: Colors.grey[400],
+        activeColor: Colors.grey[800],
+        tabActiveBorder: Border.all(color: Colors.white),
+        tabBackgroundColor: Colors.grey.shade100,
+        mainAxisAlignment: MainAxisAlignment.center,
+        tabBorderRadius: 20,
         tabs: const [
           GButton(
             icon: Icons.home,

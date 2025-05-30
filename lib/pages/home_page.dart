@@ -25,10 +25,10 @@ class _HomePageState extends State<HomePage> {
 
   // Pages to be displayed on the Home Page
   // Shop Page
-  const ShopPage(),
+  ShopPage(),
 
   // Cart Page
-  const CartPage(),
+  CartPage(),
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,7 +49,7 @@ class _HomePageState extends State<HomePage> {
             );
           },
         ),
-      )
+      ),
       drawer: Drawer(
         backgroundColor: Colors.grey[100],
         child: Column(
@@ -62,19 +62,67 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             // Divider
-            Padding(
-              padding: const EdgeInsets.symmetric(24.0),
-              child: const Divider(
+            const Padding(
+              padding: EdgeInsets.symmetric(24.0),
+              child: Divider(
                 color: Colors.grey,
               ),
             ),
 
-
             // Other Pages
-          ],
-        )
+            // 1. Shop Page
+            const Padding(
+              padding: EdgeInsets.only(left: 25.0),
+              child: ListTile(
+                leading: Icon(
+                  Icons.home,
+                   color: Colors.white
+                   ),
+                title: Text(
+                  'Home', 
+                  style: TextStyle(
+                    color: Colors.white
+                    ),
+                    ),
+              ),
+            ),
 
-      )
+            // 2. About Page
+            const Padding(
+              padding: EdgeInsets.only(left: 25.0),
+              child: ListTile(
+                leading: Icon(
+                  Icons.info,
+                   color: Colors.white
+                   ),
+                title: Text(
+                  'About', 
+                  style: TextStyle(
+                    color: Colors.white
+                    ),
+                    ),
+              ),
+            ),
+
+            // 3. LogOut Page
+            const Padding(
+              padding: EdgeInsets.only(left: 25.0),
+              child: ListTile(
+                leading: Icon(
+                  Icons.logout,
+                   color: Colors.white
+                   ),
+                title: Text(
+                  'Log Out', 
+                  style: TextStyle(
+                    color: Colors.white
+                    ),
+                    ),
+              ),
+            ),
+          ],
+        ),
+      ),
       body: _pages[_selectedIndex],
     );
   }

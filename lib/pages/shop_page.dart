@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 
-class CartPage extends StatelessWidget {
-  const CartPage({super.key});
+class ShopPage extends StatefulWidget {
+  const ShopPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Text(
-        'Cart Page'
+        'Shop Page'
       ),
-      
-    );
+    )
   }
 }

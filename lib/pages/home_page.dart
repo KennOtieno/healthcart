@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:healthcart/components/bottom_navigation.dart';
+import 'package:healthcart/pages/cart_page.dart';
+import 'package:healthcart/pages/shop_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -22,16 +24,58 @@ class _HomePageState extends State<HomePage> {
   }
 
   // Pages to be displayed on the Home Page
-  // Meds Page
+  // Shop Page
+  const ShopPage(),
 
   // Cart Page
+  const CartPage(),
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       backgroundColor: Colors.white,
-      bottomNavigationBar: BottomNavigation(
+      bottomNavigationBar: const BottomNavigation(
         onTabChange: (index) => navigateBottomNavigation(index),
       ),
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        leading: Builder(
+          builder: (context) {
+            return IconButton(
+              icon: const Icon(Icons.menu, color: Colors.black),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+            );
+          },
+        ),
+      )
+      drawer: Drawer(
+        backgroundColor: Colors.grey[100],
+        child: Column(
+          children: [
+            // Logo
+            DrawerHeader(
+              child: Image.asset(
+                'lib/images/healthcart_logo.png',
+                color: Colors.black,
+              ),
+            ),
+            // Divider
+            Padding(
+              padding: const EdgeInsets.symmetric(24.0),
+              child: const Divider(
+                color: Colors.grey,
+              ),
+            ),
+
+
+            // Other Pages
+          ],
+        )
+
+      )
+      body: _pages[_selectedIndex],
     );
   }
 }

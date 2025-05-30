@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:healthcart/components/med_tile.dart';
 
 class ShopPage extends StatefulWidget {
   const ShopPage({super.key});
@@ -17,6 +18,7 @@ class ShopPage extends StatefulWidget {
             ),
             child: const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Text(
                   'Search',
@@ -53,8 +55,17 @@ class ShopPage extends StatefulWidget {
           
             ]
           ),
-        )
+        ),
+        const SizedBox(height: 10),
+        // Product List
+        Expanded(
+          child: ListView.builder(
+            itemBuilder: (context, index) {
+              return const MedTile();
+            },
+          ),
+        ),
       ]
-    )
+    );
   }
 }

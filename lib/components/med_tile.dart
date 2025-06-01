@@ -69,7 +69,7 @@ class MedTile extends StatelessWidget {
             
                   // Price of the Medicine
                   Text(
-                    medicine.price,
+                    'KES' + medicine.price,
                     style: const TextStyle(
                       fontSize: 16,
                       color: Colors.black,

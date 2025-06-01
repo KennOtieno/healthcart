@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:healthcart/components/med_tile.dart';
+import 'package:healthcart/models/medicine.dart';
 
 class ShopPage extends StatefulWidget {
   const ShopPage({super.key});
@@ -74,6 +75,13 @@ class ShopPage extends StatefulWidget {
                 medicine: medicine,
               );
             },
+          ),
+        ),
+        // Divider
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20.0),
+          child: Divider(
+            color: Colors.grey,
           ),
         ),
       ]

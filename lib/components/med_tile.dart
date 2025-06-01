@@ -20,6 +20,8 @@ class MedTile extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
       ),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
         children: [
           // Medicinee Image
           ClipRRect(
@@ -41,22 +43,55 @@ class MedTile extends StatelessWidget {
             ),
           ),
 
-          // Pricr and More Details
-          Row(
-            children: [
-              Column(
-                // Name of the Medicine
-                Text(
-                  medicine.name
-                ),
 
-                // Price of the Medicine
-                Text(
-                  medicine.price
-                ),
+          // Name and Price
+          Padding(
+            padding: const EdgeInsets.only(
+              left: 20
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
 
-              )
-            ],
+                  children: [
+                     Text(
+                    medicine.name,
+                    style: const TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                  const SizedBox(height: 5),
+            
+                  // Price of the Medicine
+                  Text(
+                    medicine.price,
+                    style: const TextStyle(
+                      fontSize: 16,
+                      color: Colors.black,
+                    ),
+                  ),
+                  ]
+                ),
+                // ADD TO CART Button
+                Container(
+                  padding: const EdgeInsets.all(10),
+                  decoration: const BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(20),
+                      bottomRight: Radius.circular(20),
+                    ),
+                  ),
+                  child: const Icon(
+                    Icons.add,
+                    )
+                    ),
+              ],
+            ),
           )
         ],
       ),

@@ -22,7 +22,20 @@ class MedTile extends StatelessWidget {
       child: Column(
         // My Plan Is To:
         // 1. Medicine Image
+        ClipRect(
+          borderRadius: BorderRadius.circular(20),
+          child: Image.asset(
+            medicine.imagePath
+          ),
+        ),
+
         // 2. Medicine Short Description
+        Text(
+          medicine.description,
+          style: TextStyle(
+            color: Colors.black,
+          ),
+        )
         // 3. Medicine Price and Description
         // 4. A '+' button to add to the cartt
       )

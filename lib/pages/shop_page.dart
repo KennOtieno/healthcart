@@ -60,8 +60,19 @@ class ShopPage extends StatefulWidget {
         // Product List
         Expanded(
           child: ListView.builder(
+            itemCount: 8,
+            scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
-              return const MedTile();
+              // Creating Meds
+              Medicine medicine = Medicine(
+                name: 'Brufen',
+                description: 'Pain Relief',
+                price: '150',
+                imagePath: 'lib/images/brufen.jpg',
+              );
+              return MedTile(
+                medicine: med,
+              );
             },
           ),
         ),

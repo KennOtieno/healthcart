@@ -44,13 +44,14 @@ class MedTile extends StatelessWidget {
           ),
 
 
-          // Name and Price
+          // Name and Price * 
           Padding(
             padding: const EdgeInsets.only(
               left: 20
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

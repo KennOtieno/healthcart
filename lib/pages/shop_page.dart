@@ -71,7 +71,7 @@ class ShopPage extends StatefulWidget {
                 imagePath: 'lib/images/brufen.jpg',
               );
               return MedTile(
-                medicine: med,
+                medicine: medicine,
               );
             },
           ),

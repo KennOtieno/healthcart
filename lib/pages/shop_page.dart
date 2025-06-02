@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:healthcart/components/med_tile.dart';
+import 'package:healthcart/models/cart.dart';
 import 'package:healthcart/models/medicine.dart';
+import 'package:provider/provider.dart';
 
 class ShopPage extends StatefulWidget {
   const ShopPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Consumer<Cart>(
+      builder: (context, value, child) => Column(
       children: [
         // A Search Bar
        Container(
@@ -64,13 +67,10 @@ class ShopPage extends StatefulWidget {
             itemCount: 8,
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
-              // Creating Meds
-              Medicine medicine = Medicine(
-                name: 'Brufen',
-                description: 'Pain Relief',
-                price: '150',
-                imagePath: 'lib/images/brufen.jpg',
-              );
+              // Get Medicine
+              Medicine medicine = value.getCart()[index];
+
+              // returning MedTile
               return MedTile(
                 medicine: medicine,
               );
@@ -85,6 +85,7 @@ class ShopPage extends StatefulWidget {
           ),
         ),
       ]
+    );
     );
   }
 }

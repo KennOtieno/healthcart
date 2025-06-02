@@ -55,12 +55,26 @@ class Cart {
   ];
 
   // List of Medicine in the Users Cart
+  List<Medicine> userCart = [];
 
   // List of Medicine for sell
+  List<Medicine> getCart() {
+    return userCart;
+  }
 
   // Get Cart
+  List<Medicine> getUserCart() {
+    return userCart;
+  }
 
   // Add Items to Cart
+  void addToCart(Medicine medicine) {
+    userCart.add(medicine);
+  }
 
   // Remove Items from Cart
+  void removeMedicineFromCart(Medicine medicine) {
+    userCart.remove(value)
+
+  }
 }

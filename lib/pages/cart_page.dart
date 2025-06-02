@@ -5,11 +5,22 @@ class CartPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text(
-        'Cart Page'
-      ),
-      
-    );
+    return Consumer<Cart>(
+      builder: (context, value, child) => Column(
+        children: [
+          // Heading
+          Text(
+            'Cart',
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: 20),
+
+          Expanded
+        ]
+      )
+    )
   }
 }

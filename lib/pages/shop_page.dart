@@ -8,6 +8,25 @@ class ShopPage extends StatefulWidget {
   const ShopPage({super.key});
 
   @override
+  State<ShopPage> createState() => _ShopPageState();
+}
+class _ShopPageState extends State<ShopPage> {
+
+  // Add Medicine to the Cart
+  void addMedicineToCart(Medicine medicine) {
+    Provider.of<Cart>(context, listen: false).addToCart(medicine);
+
+    // Show user that the medicine has been added to the cart suceesfult
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Added to Cart'),
+        content: Text('Added to your Cart'),
+      ),
+      );
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Consumer<Cart>(
       builder: (context, value, child) => Column(
@@ -35,14 +54,14 @@ class ShopPage extends StatefulWidget {
             )
           ),
 
-        // Most Purchased
+        // Shop Now
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const Text(
-                'Most Purchased',
+                'Shop Now',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -73,6 +92,7 @@ class ShopPage extends StatefulWidget {
               // returning MedTile
               return MedTile(
                 medicine: medicine,
+                onTap: () => addMedicineToCart(medicine),
               );
             },
           ),

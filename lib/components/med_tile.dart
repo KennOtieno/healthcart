@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:healthcart/models/medicine.dart';
 
+// ignore: must_be_immutable
 class MedTile extends StatelessWidget {
   Medicine medicine;
+  void Function()? onTap;
   MedTile(
     {
       super.key,
@@ -81,19 +83,22 @@ class MedTile extends StatelessWidget {
                   ]
                 ),
                 // ADD TO CART Button
-                Container(
-                  padding: const EdgeInsets.all(10),
-                  decoration: const BoxDecoration(
-                    color: Colors.black,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(20),
-                      bottomRight: Radius.circular(20),
+                GestureDetector(
+                  onTap: () {} => addMedicineToCart(individualMedicine),
+                  child: Container(
+                    padding: const EdgeInsets.all(10),
+                    decoration: const BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(20),
+                        bottomRight: Radius.circular(20),
+                      ),
                     ),
-                  ),
-                  child: const Icon(
-                    Icons.add,
-                    )
-                    ),
+                    child: const Icon(
+                      Icons.add,
+                      )
+                      ),
+                ),
               ],
             ),
           )

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:healthcart/models/cart.dart';
+import 'package:provider/provider.dart';
 import 'pages/introduction_page.dart';
 
 void main() {

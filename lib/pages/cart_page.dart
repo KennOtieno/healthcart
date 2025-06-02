@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:healthcart/models/cart.dart';
+import 'package:provider/provider.dart';
 
 class CartPage extends StatelessWidget {
   const CartPage({super.key});
@@ -6,20 +8,24 @@ class CartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<Cart>(
-      builder: (context, value, child) => Column(
-        children: [
-          // Heading
-          Text(
-            'Cart',
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
+      builder: (context, value, child) => const Padding(
+        padding: EdgeInsets.all(8.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Heading
+            Text(
+              'Cart',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-          ),
-          const SizedBox(height: 20),
-
-          Expanded
-        ]
+            SizedBox(height: 20),
+        
+            Expanded
+          ]
+        ),
       )
     )
   }

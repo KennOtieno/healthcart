@@ -1,6 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:healthcart/models/medicine.dart';
 
-class Cart {
+class Cart extends ChangeNotifier {
   // List of Medicine for sell
   List<Medicine> medicinesForSell = [
     Medicine(
@@ -70,11 +71,13 @@ class Cart {
   // Add Items to Cart
   void addToCart(Medicine medicine) {
     userCart.add(medicine);
+    notifyListeners();
   }
 
   // Remove Items from Cart
   void removeMedicineFromCart(Medicine medicine) {
-    userCart.remove(value)
+    userCart.remove(medicine);
+    notifyListeners();
 
   }
 }

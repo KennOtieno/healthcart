@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:healthcart/models/cart.dart';
 import 'pages/introduction_page.dart';
 
 void main() {
@@ -10,9 +11,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: IntroductionPage(),
+    return ChangeNotifierProvider(
+      create: (context) => Cart(),
+      builder: (context, child) => const IntroductionPage(
+        debugShowCheckedModeBanner: false,
+        home: IntroductionPage(),
+      ),
     );
   }
 

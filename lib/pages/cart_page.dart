@@ -30,7 +30,7 @@ class CartPage extends StatelessWidget {
                 itemCount: value.getUserCart.length,
                 itemBuilder: (context, index) {
                   // Get Individual Medicine from Cart
-                  Medicine individualMedicine = value.getUserCart [index];
+                  Medicine individualMedicine = value.getUserCart() [index];
                   // Return the Cart Item
                   return CartItems(medicine: individualMedicine);
                 }

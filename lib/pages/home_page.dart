@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:healthcart/components/bottom_navigation.dart';
+
 import 'package:healthcart/pages/cart_page.dart';
 import 'package:healthcart/pages/shop_page.dart';
 
@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      bottomNavigationBar: MyBottomNavBar(
+      bottomNavigationBar: myBottomNavBar(
         onTabChange: (index) => navigateBottomBar(index),
       ),
 
@@ -68,4 +68,6 @@ class _HomePageState extends State<HomePage> {
       body: _pages[_selectedIndex], // Displaying the selected page based on index
     );
   }
+  
+  myBottomNavBar({required void Function(dynamic index) onTabChange}) {}
 }

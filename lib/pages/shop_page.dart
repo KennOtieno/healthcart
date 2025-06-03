@@ -19,8 +19,8 @@ class _ShopPageState extends State<ShopPage> {
     // Show user that the medicine has been added to the cart suceesfult
     showDialog(
       context: context,
-      builder: (context) => AlertDialog(
-        title: const Text('Added to Cart'),
+      builder: (context) => const AlertDialog(
+        title: Text('Added to Cart'),
         content: Text('Added to your Cart'),
       ),
       );
@@ -105,7 +105,7 @@ class _ShopPageState extends State<ShopPage> {
           ),
         ),
       ]
-    );
+    ),
     );
   }
 }

@@ -25,9 +25,11 @@ class _HomePageState extends State<HomePage> {
 
   // Pages to be displayed on the Home Page
   // Shop Page
+  // ignore: non_constant_identifier_names
   ShopPage(),
 
   // Cart Page
+  // ignore: non_constant_identifier_names
   CartPage(),
   @override
   Widget build(BuildContext context) {
@@ -63,7 +65,7 @@ class _HomePageState extends State<HomePage> {
             ),
             // Divider
             const Padding(
-              padding: EdgeInsets.symmetric(24.0),
+              padding: EdgeInsets.symmetric(24),
               child: Divider(
                 color: Colors.grey,
               ),

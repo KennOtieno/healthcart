@@ -8,7 +8,7 @@ class MedTile extends StatelessWidget {
   MedTile(
     {
       super.key,
-      required this.medicine,
+      required this.medicine, required void Function() onTap,
       }
       );
 

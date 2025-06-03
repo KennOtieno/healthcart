@@ -45,6 +45,6 @@ class _CartItemsState extends State<CartItems> {
           },
         ),
       ),
-    )
+    );
   }
 }

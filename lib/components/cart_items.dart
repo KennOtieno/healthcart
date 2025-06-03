@@ -3,6 +3,7 @@ import 'package:healthcart/models/cart.dart';
 import 'package:healthcart/models/medicine.dart';
 import 'package:provider/provider.dart';
 
+// ignore: must_be_immutable
 class CartItems extends StatefulWidget {
   Medicine medicine;
   CartItems({
@@ -47,4 +48,8 @@ class _CartItemsState extends State<CartItems> {
       ),
     );
   }
+}
+// This extension is just a placeholder to show where the removeItemFromCart method would be implemented
+extension on Cart {
+  void removeItemFromCart(Medicine medicine) {}
 }

@@ -26,11 +26,12 @@ class _HomePageState extends State<HomePage> {
   // Pages to be displayed on the Home Page
   // Shop Page
   // ignore: non_constant_identifier_names
-  ShopPage(),
+  ShopPage()
 
   // Cart Page
   // ignore: non_constant_identifier_names
-  CartPage(),
+  CartPage()
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(

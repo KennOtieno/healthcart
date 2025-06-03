@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:healthcart/pages/home_page.dart';
 
 class IntroductionPage extends StatelessWidget {
-  const IntroductionPage({super.key});
+  const IntroductionPage({super.key, required bool debugShowCheckedModeBanner, required IntroductionPage home});
 
   @override
   Widget build(BuildContext context) {
